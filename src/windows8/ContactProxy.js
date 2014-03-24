@@ -21,13 +21,9 @@
 */
 
 
-module.exports = {
-    search:function(win,fail,args){
-        var fields = args[0]; // ignored, always returns entire object
-        var options = args[1];
 
-        var filter = options.filter;   // ignored
-        var multiple = true;//options.multiple;
+module.exports = {
+    pickContact: function(win, fail, args) {
 
         var picker = new Windows.ApplicationModel.Contacts.ContactPicker();
         picker.selectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.contacts;   // select entire contact
@@ -141,7 +137,13 @@ module.exports = {
         fail && setTimeout(function () {
             fail(new Error("Contact create/save not supported on Windows 8"));
         }, 0);
+    },
 
+    search: function(win, fail, args) {
+        console && console.error && console.error("Error : Windows 8 does not support searching contacts");
+        fail && setTimeout(function() {
+            fail(new Error("Contact search not supported on Windows 8"));
+        }, 0);
     }
 
 

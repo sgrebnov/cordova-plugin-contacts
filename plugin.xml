@@ -194,11 +194,13 @@
         <js-module src="src/firefoxos/ContactsProxy.js" name="ContactsProxy">
             <runs />
         </js-module>
-    </platform>  
+    </platform>    
 
-        <!-- wp8 -->
-    <js-module src="src/windows8/ContactProxy.js" name="ContactProxy">
-        <merges target="" />
-    </js-module>
+    <!-- Windows 8 -->
+    <platform name="windows8">
+        <js-module src="src/windows8/ContactProxy.js" name="ContactProxy">
+            <merges target="" />
+        </js-module>
+    </platform>
 
 </plugin>
