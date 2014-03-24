@@ -45,8 +45,9 @@
         <clobbers target="ContactOrganization" />
     </js-module>
 
-
-
+    <js-module src="www/ContactFieldType.js" name="ContactFieldType">
+            <merge target="" />
+    </js-module>
 
     <!-- android -->
     <platform name="android">
